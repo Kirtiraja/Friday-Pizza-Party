@@ -33,3 +33,17 @@ PizzaMaker.getPrice = function() {
 
 
 //User interface logic------------------------------------------
+$(document).ready(function(){
+  let newOrder = new PizzaMaker();
+  $("form#userOrder").submit(function)(event) {
+    event.preventDefault();
+    let userToppings = [];
+    let sizeInput = $("#size").val();
+    let toppingsInputs = $("#")
+    var player2 = new Player ()
+  }
+
+
+
+  $("#hold1").click(function(event) {
+    event.preventDefault();
