@@ -7,14 +7,14 @@ function PizzaMaker(size,toppings) {
 
 PizzaMaker.getPrice = function() {
   this.toppings.forEach(function(topping){
-    this.price ++ 1 ;
-  }
+    this.price += 1 ;
+  })
       if (this.size === "small") {
-        this.price ++ 13;
+        this.price += 13;
       }else if (this.size === "medium") {
-        this.price ++ 15;
+        this.price += 15;
       }else if (this.size === "large") {
-        this.price ++ 17;
+        this.price += 17;
       }
       return this.price;
 }
@@ -35,16 +35,18 @@ PizzaMaker.getPrice = function() {
 //User interface logic------------------------------------------
 $(document).ready(function(){
   let newOrder = new PizzaMaker();
-  $("form#userOrder").submit(function)(event) {
-    event.preventDefault();
+  $("form#userOrder").submit(function(event) {
     let userToppings = [];
-    let sizeInput = $("#size").val();
-    let toppingsInputs = $("#userToppings").val());
+    console.log("hello");
+    let sizeInput = $("#sizePizza option:selected").val();
+    let toppingsInputs = $("#userToppings").val();
+
+console.log(this.size);
+event.preventDefault();
+
+  })
+})
 
 
-  }
-
-
-
-  $("#hold1").click(function(event) {
-    event.preventDefault();
+  // $("#viewOrder").click(function(event) {
+  //   event.preventDefault();
