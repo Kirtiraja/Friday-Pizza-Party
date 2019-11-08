@@ -39,8 +39,9 @@ $(document).ready(function(){
     event.preventDefault();
     let userToppings = [];
     let sizeInput = $("#size").val();
-    let toppingsInputs = $("#")
-    var player2 = new Player ()
+    let toppingsInputs = $("#userToppings").val());
+
+
   }
 
 
