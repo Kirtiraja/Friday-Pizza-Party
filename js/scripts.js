@@ -36,16 +36,20 @@ PizzaMaker.getPrice = function() {
 $(document).ready(function(){
   $("#userOrder").submit(function(event){
     event.preventDefault();
+
     let toppingsArray = [];
-    let toppingsInputs = $("#userToppings:checkbox:checked").val();
-    let sizeInput = $("#sizePizza option:selected").val();
+    let toppingsInputs = $(".userToppings:checkbox:checked").val();
+    var sizeInput = $("#sizePizza option:selected").val();
+    toppingsInputs.forEach(function(topping){
+      toppingsArray.push($(this).val());
+    })
     // toppingsInputs.forEach(function(toppingInput){
     //   toppingsArray.push(toppingsInputs.val());
     // })
     // let newOrder = new PizzaMaker();
 
 console.log(sizeInput);
-console.log(toppingsInputs);
+console.log(toppingsArray);
 });
 });
 
