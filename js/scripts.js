@@ -34,18 +34,20 @@ PizzaMaker.getPrice = function() {
 
 //User interface logic------------------------------------------
 $(document).ready(function(){
-  let newOrder = new PizzaMaker();
-  $("form#userOrder").submit(function(event) {
-    let userToppings = [];
-    console.log("hello");
+  $("#userOrder").submit(function(event){
+    event.preventDefault();
+    let toppingsArray = [];
+    let toppingsInputs = $("#userToppings:checkbox:checked").val();
     let sizeInput = $("#sizePizza option:selected").val();
-    let toppingsInputs = $("#userToppings").val();
+    // toppingsInputs.forEach(function(toppingInput){
+    //   toppingsArray.push(toppingsInputs.val());
+    // })
+    // let newOrder = new PizzaMaker();
 
-console.log(this.size);
-event.preventDefault();
-
-  })
-})
+console.log(sizeInput);
+console.log(toppingsInputs);
+});
+});
 
 
   // $("#viewOrder").click(function(event) {
