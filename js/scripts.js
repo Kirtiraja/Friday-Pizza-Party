@@ -38,17 +38,18 @@ $(document).ready(function(){
     event.preventDefault();
 
     let toppingsArray = [];
-    let toppingsInputs = $(".userToppings:checkbox:checked").val();
-    var sizeInput = $("#sizePizza option:selected").val();
-    toppingsInputs.forEach(function(topping){
+    let sizeInput = $("#sizePizza option:selected").val();
+    let sauceInput = $("#saucePizza option:selected").val();
+    $(".userToppings input:checked").each(function(topping){
       toppingsArray.push($(this).val());
-    })
+    });
     // toppingsInputs.forEach(function(toppingInput){
     //   toppingsArray.push(toppingsInputs.val());
     // })
     // let newOrder = new PizzaMaker();
 
 console.log(sizeInput);
+console.log(sauceInput);
 console.log(toppingsArray);
 });
 });
