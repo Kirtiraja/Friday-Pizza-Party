@@ -1,24 +1,27 @@
 //Business logic---------------------------------------------
-function PizzaMaker(size,toppings) {
+function PizzaMaker(size, sauce, toppings) {
   this.size = size;
+  this.sauce = sauce;
   this.toppings = toppings;
   this.price = 0;
+  console.log(this.price);
 }
 
-PizzaMaker.getPrice = function() {
+PizzaMaker.prototype.getPrice = function() {
   this.toppings.forEach(function(topping){
-    this.price += 1 ;
-  })
-      if (this.size === "small") {
-        this.price += 13;
-      }else if (this.size === "medium") {
-        this.price += 15;
-      }else if (this.size === "large") {
-        this.price += 17;
-      }
+    this.price += 1;
+    if (this.size === "small") {
+      this.price += 13;
+    }else if (this.size === "medium") {
+      this.price += 15;
+    }else if (this.size === "large") {
+      this.price += 17;
+    } else {
       return this.price;
+      console.log("hello");
+    }
+  })
 }
-
 
 
 
@@ -43,17 +46,13 @@ $(document).ready(function(){
     $(".userToppings input:checked").each(function(topping){
       toppingsArray.push($(this).val());
     });
-    // toppingsInputs.forEach(function(toppingInput){
-    //   toppingsArray.push(toppingsInputs.val());
-    // })
-    // let newOrder = new PizzaMaker();
+    let yourPizza = new PizzaMaker(sizeInput, sauceInput, toppingsArray);
+
+
+  $("#viewOrder").text(yourPizza);
 
 console.log(sizeInput);
 console.log(sauceInput);
 console.log(toppingsArray);
 });
 });
-
-
-  // $("#viewOrder").click(function(event) {
-  //   event.preventDefault();
