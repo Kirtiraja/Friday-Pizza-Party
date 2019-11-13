@@ -59,7 +59,7 @@ $(document).ready(function(){
     $("#toppings").append(toppingsArray.join(", "));
     $("#size").text(yourPizza.size);
     $("#sauce").text(yourPizza.sauce);
-    $("#yourTotal").text("$" + totalPrice);
+    $("#yourTotal").append("$" + totalPrice);
     console.log(toppingsPrice);
     console.log(finalSizePrice);
     console.log(finalSaucePrice);
