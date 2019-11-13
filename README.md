@@ -6,7 +6,7 @@
 
 ## Description
 
-_This independent project creates a website for a pizza company where a user can choose one or more individual toppings (cheese, pepperoni, artichoke, anchovy, etc) and a size to order a pizza and see the final cost.This simple website was created using HTML, Bootstrap, jQuery, and good 'ol vanilla JS.
+_This independent project creates a website for a pizza company where a user can choose one or more individual toppings (cheese, pepperoni, artichoke, anchovy, etc) and a size to order a pizza and see the final cost.This simple website was created using HTML, Bootstrap, jQuery, and JS.
 
 ## Setup/Installation Requirements
 
@@ -17,7 +17,7 @@ _This independent project creates a website for a pizza company where a user can
 | Behavior: | Input Example: | Output Example: |
 | - | - | - |
 |User can select pizza size from 2-3 sizes and see price accordingly.|"Medium" |"$14.00"  |
-|User can select one or more toppings and see price accordingly.|"mushrooms,olives"|"$1+$1"|
+|User can select one or more toppings and see price accordingly.|"mushrooms,olives"|"$2+$2"|
 |User can click "order" and see final cost of pizza.| "Order" |"Your total:$24.00"|
 | *stretch:* User selects size and toppings with images representing each option.|" ![](img/pizza.jpeg) "|"small" |
 |*stretch:* user can order more than one pizza with different toppings.| "1 small pizza w/mushrooms + olives and 1 large pepperoni" | "total: 33.00" |
