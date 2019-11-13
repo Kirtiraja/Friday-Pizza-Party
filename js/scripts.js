@@ -60,10 +60,7 @@ $(document).ready(function(){
     $("#size").text(yourPizza.size);
     $("#sauce").text(yourPizza.sauce);
     $("#yourTotal").append("$" + totalPrice);
-    console.log(toppingsPrice);
-    console.log(finalSizePrice);
-    console.log(finalSaucePrice);
-    console.log(totalPrice);
+    $("#showOrder").slideToggle();
 
 });
 });
