@@ -21,7 +21,7 @@ PizzaMaker.prototype.sizePrice = function() {
 }
 
 
-PizzaMaker.prototype.saucePrize = function() {
+PizzaMaker.prototype.saucePrice = function() {
   if (this.sauce === "Marinara") {
     return 1;
   }else if (this.sauce === "Pesto"){
@@ -30,7 +30,9 @@ PizzaMaker.prototype.saucePrize = function() {
   }
 }
 
-
+PizzaMaker.prototype.totalPrice = function(){
+  this.price.push(this.size + this.sauce + this.toppings);
+}
 
 
 
@@ -53,9 +55,14 @@ $(document).ready(function(){
       toppingsArray.push($(this).val());
     });
     let yourPizza = new PizzaMaker(sizeInput, sauceInput, toppingsArray);
+    let toppingsPrice = toppingsArray.length * 2;
+    yourPizza.sizePrice();
+    yourPizza.saucePrice();
 
 
-  $("#viewOrder").text(yourPizza);
+    $("#size").text(yourPizza.size);
+    $("#sauce").text(yourPizza.sauce);
+    $("#toppings").append(toppingsArray.join(", "));
 
 
 });
