@@ -1,9 +1,17 @@
 //Business logic---------------------------------------------
-function PizzaMaker(size, sauce) {
+function PizzaMaker(size, sauce, toppings) {
   this.size = size;
   this.sauce = sauce;
-  this.toppings = [];
+  this.toppings = toppings;
   this.price = 0;
+  console.log(this.toppings);
+  console.log(this.sauce);
+  console.log(this.size);
+
+}
+
+PizzaMaker.prototype.toppingsPrice = function(){
+    return (this.toppings).length;
 }
 
 PizzaMaker.prototype.sizePrice = function() {
@@ -38,6 +46,8 @@ PizzaMaker.prototype.saucePrice = function() {
 
 
 
+
+
 //User interface logic------------------------------------------
 $(document).ready(function(){
   $("#userOrder").submit(function(event){
@@ -50,17 +60,20 @@ $(document).ready(function(){
       toppingsArray.push($(this).val());
     });
     let yourPizza = new PizzaMaker(sizeInput, sauceInput, toppingsArray);
-    let toppingsPrice = toppingsArray.length * 2;
+    let toppingsPrice = yourPizza.toppingsPrice();
     let finalSizePrice = yourPizza.sizePrice();
     let finalSaucePrice = yourPizza.saucePrice();
-    let totalPrice = toppingsPrice + finalSizePrice + finalSaucePrice;
+    // let overallPrice = yourPizza.totalPrice();
 
 
     $("#toppings").append(toppingsArray.join(", "));
     $("#size").text(yourPizza.size);
     $("#sauce").text(yourPizza.sauce);
-    $("#yourTotal").append("$" + totalPrice);
+    $("#yourTotal").append();
     $("#showOrder").slideToggle();
-
+console.log(toppingsPrice);
+console.log(finalSaucePrice);
+console.log(finalSizePrice);
+console.log(overallPrice);
 });
 });
