@@ -35,6 +35,10 @@ PizzaMaker.prototype.saucePrice = function() {
 }
 
 
+PizzaMaker.prototype.totalPrice = function(){}
+
+
+
 
 
 
@@ -63,13 +67,13 @@ $(document).ready(function(){
     let toppingsPrice = yourPizza.toppingsPrice();
     let finalSizePrice = yourPizza.sizePrice();
     let finalSaucePrice = yourPizza.saucePrice();
-    // let overallPrice = yourPizza.totalPrice();
+    let overallPrice = toppingsPrice + finalSizePrice + finalSaucePrice;
 
 
     $("#toppings").append(toppingsArray.join(", "));
     $("#size").text(yourPizza.size);
     $("#sauce").text(yourPizza.sauce);
-    $("#yourTotal").append();
+    $("#yourTotal").append ("$" + overallPrice);
     $("#showOrder").slideToggle();
 console.log(toppingsPrice);
 console.log(finalSaucePrice);
