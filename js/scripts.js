@@ -1,5 +1,5 @@
 //Business logic---------------------------------------------
-function PizzaMaker(size, sauce, toppings, price) {
+function PizzaMaker(size, sauce, toppings,) {
   this.size = size;
   this.sauce = sauce;
   this.toppings = toppings;
@@ -9,53 +9,24 @@ function PizzaMaker(size, sauce, toppings, price) {
 }
 
 PizzaMaker.prototype.toppingsPrice = function(){
-    return (this.toppings).length *2;
+  this.price +=(this.toppings).length *2;
 }
 
 PizzaMaker.prototype.sizePrice = function() {
     if (this.size === "Small") {
-      return 13;
+      this.price += 13;
     } else if (this.size === "Medium") {
-      return 15;
-    } else  {
-      return 17;
+      this.price += 15;
+    } else if (this.size === "Large") {
+      this.price += 17;
+    }if (this.sauce === "Marinara") {
+      this.price += 1;
+    }else if (this.sauce === "Pesto"){
+      this.price += 2;
+    }else {
+      this.price+= 3;
     }
 }
-
-
-PizzaMaker.prototype.saucePrice = function() {
-  if (this.sauce === "Marinara") {
-    return 1;
-  }else if (this.sauce === "Pesto"){
-    return 2;
-  }else { return 3;
-  }
-}
-
-
-PizzaMaker.prototype.totalPrice = function(){
-  if (this.size === "Small") {
-    return this.price += 13;
-  } else if (this.size === "Medium") {
-    return this.price += 15;
-  } else if (this.size === "Large") {
-    return this.price += 17;
-  }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -71,18 +42,14 @@ $(document).ready(function(){
       toppingsArray.push($(this).val());
     });
     let yourPizza = new PizzaMaker(sizeInput, sauceInput, toppingsArray);
-    let toppingsPrice = yourPizza.toppingsPrice();
-    let finalSizePrice = yourPizza.sizePrice();
-    let finalSaucePrice = yourPizza.saucePrice();
-    let overallPrice = yourPizza.totalPrice();
-    // let overallPrice = toppingsPrice + finalSizePrice + finalSaucePrice;
-
+    yourPizza.toppingsPrice();
+    yourPizza.sizePrice();
 
     $("#toppings").append(toppingsArray.join(", "));
     $("#size").text(yourPizza.size);
     $("#sauce").text(yourPizza.sauce);
-    $("#yourTotal").text("$" + overallPrice);
+    $("#yourTotal").text( "$" + yourPizza.price);
     $("#showOrder").slideToggle();
 
-});
+  });
 });
